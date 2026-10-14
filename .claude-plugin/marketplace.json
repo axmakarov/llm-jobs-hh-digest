@@ -1,0 +1,16 @@
+{
+  "name": "llm-jobs-hh-digest",
+  "description": "Скилл для Claude: дайджест LLM-вакансий hh.ru в PDF",
+  "owner": {
+    "name": "Alex Makarov",
+    "url": "https://github.com/axmakarov"
+  },
+  "plugins": [
+    {
+      "name": "llm-jobs-hh-digest",
+      "source": "./",
+      "description": "Дайджест LLM-вакансий с hh.ru за период: сбор через браузер и PDF «LLM JOBS».",
+      "version": "1.0.0"
+    }
+  ]
+}

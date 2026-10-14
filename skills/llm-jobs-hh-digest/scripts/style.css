@@ -1,0 +1,118 @@
+@page {
+  size: A4;
+  margin: 16mm 15mm 17mm 15mm;
+  background: #060A13;
+  @bottom-left { content: "__FOOTER__"; font: 500 7.5pt "Inter"; color: #5E6D86; letter-spacing: 0.02em; }
+  @bottom-right { content: counter(page) " / " counter(pages); font: 600 7.5pt "Inter"; color: #7F8EA8; }
+}
+@page :first { margin: 0; background: #04070E; @bottom-left { content: none; } @bottom-right { content: none; } }
+
+* { box-sizing: border-box; }
+html { background: #060A13; font-family: "Inter", "DejaVu Sans", sans-serif; color: #E6ECF6; font-size: 10pt; line-height: 1.45; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { margin: 0; }
+h1 { bookmark-level: 1; }
+h2.group { bookmark-level: 2; }
+h3.role { bookmark-level: 3; }
+.ct { bookmark-level: none; }
+
+/* COVER */
+.cover { position: relative; height: 297mm; width: 210mm; overflow: hidden; padding: 22mm 18mm 0 18mm; page-break-after: always;
+  background: radial-gradient(ellipse 70% 45% at 85% 25%, rgba(30,110,255,0.28), rgba(4,7,14,0) 70%),
+              radial-gradient(ellipse 60% 30% at 20% 85%, rgba(57,198,255,0.10), rgba(4,7,14,0) 70%), #04070E; }
+.net { position: absolute; right: -16mm; top: 40mm; width: 112mm; height: 124mm; }
+.net svg { width: 100%; height: 100%; }
+.brand { font-weight: 800; font-size: 17pt; letter-spacing: 0.03em; color: #fff; position: relative; }
+.brand span { color: #2F8CFF; }
+.brand-line { width: 30mm; height: 2.4pt; margin-top: 4mm; border-radius: 2pt; background: linear-gradient(90deg, #2E7CF6, #39C6FF); position: relative; }
+.cover-title { position: relative; margin-top: 20mm; font-weight: 900; font-size: 50pt; line-height: 1.02; letter-spacing: -0.01em; color: #fff; }
+.grad { color: #3FB6FF; }
+.cover-sub { position: relative; margin-top: 7mm; font-size: 19pt; color: #F2F6FC; }
+.cover-period { position: relative; margin-top: 3mm; font-size: 12pt; color: #8FB3E8; font-weight: 500; }
+.tiles { position: absolute; left: 18mm; right: 18mm; top: 168mm; display: flex; gap: 4mm; }
+.tile { flex: 1; padding: 5mm 4.5mm 4.5mm; border-radius: 4mm; border: 0.8pt solid rgba(80,160,255,0.40);
+  background: linear-gradient(160deg, rgba(36,74,140,0.40), rgba(12,20,36,0.85)); }
+.tile b { display: block; font-size: 25pt; font-weight: 800; color: #fff; line-height: 1; }
+.tile span { display: block; margin-top: 2mm; font-size: 8.6pt; color: #A9B8D0; line-height: 1.3; }
+.cover-how { position: absolute; left: 18mm; right: 60mm; top: 210mm; font-size: 9.5pt; color: #93A3BC; line-height: 1.5; }
+
+/* SUBSCRIBE BUTTON (без flex: у ссылок во flex WeasyPrint теряет кликабельность) */
+.pill-wrap { text-align: center; }
+.cover-pill { position: absolute; left: 0; right: 0; top: 238mm; }
+.ring { display: inline-block; padding: 1.8mm; border-radius: 19mm; border: 1.4pt solid rgba(155,225,93,0.60); background: rgba(57,198,255,0.10); }
+.ring.small { padding: 1.5mm; border-radius: 16mm; }
+.pill { display: inline-block; white-space: nowrap; padding: 3mm 3mm 3mm 3.4mm; border-radius: 16mm;
+  background: linear-gradient(90deg, #10306A, #0B1C3E); border: 1.8pt solid #39C6FF; }
+.pill .tg { display: inline-block; width: 13mm; height: 13mm; border-radius: 6.5mm; background: #2AA3F0; text-align: center; line-height: 13mm; vertical-align: middle; }
+.pill .tg svg { width: 7mm; height: 7mm; vertical-align: middle; }
+.pill .handle { display: inline-block; vertical-align: middle; margin: 0 6mm 0 4mm; font-size: 19pt; font-weight: 700; color: #fff; }
+.pill .sub { display: inline-block; vertical-align: middle; padding: 2.8mm 8mm; border-radius: 10mm;
+  background: linear-gradient(90deg, #8BE04E, #B5F36E); color: #062110; font-size: 18pt; font-weight: 800; }
+.pill.small { padding: 2.4mm 2.4mm 2.4mm 2.8mm; }
+.pill.small .tg { width: 11mm; height: 11mm; line-height: 11mm; border-radius: 5.5mm; }
+.pill.small .tg svg { width: 6mm; height: 6mm; }
+.pill.small .handle { font-size: 15pt; margin: 0 5mm 0 3.4mm; }
+.pill.small .sub { font-size: 14.5pt; padding: 2.2mm 6.5mm; }
+
+/* COMMON */
+.h1 { font-size: 22pt; font-weight: 800; color: #fff; letter-spacing: -0.01em; }
+.lead { font-size: 10.5pt; color: #B8C6DB; margin: 2.5mm 0 5mm; max-width: 165mm; }
+
+/* MARKET */
+.market { page-break-after: always; }
+.facts { display: flex; flex-wrap: wrap; gap: 2.6mm; margin-bottom: 4mm; }
+.fact { width: 88.7mm; padding: 2.6mm 3.6mm; border-radius: 3mm; background: rgba(16,26,46,0.85); border: 0.6pt solid rgba(80,140,230,0.25); }
+.fact.wide { width: 100%; }
+.fk { font-size: 8pt; font-weight: 700; color: #3FB6FF; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1mm; }
+.fv { font-size: 9.3pt; color: #DCE4F1; line-height: 1.45; }
+.fv b { color: #9BE15D; }
+.chart { padding: 4mm 6mm 3.5mm; border-radius: 3.5mm; background: rgba(12,20,36,0.9); border: 0.6pt solid rgba(80,140,230,0.25); }
+.ct { font-size: 12.5pt; font-weight: 700; color: #fff; }
+.cs { font-size: 8.8pt; color: #8C9CB6; margin: 1mm 0 4mm; }
+.bar { display: flex; align-items: center; height: 4.9mm; }
+.bl { width: 27mm; text-align: right; padding-right: 3mm; font-size: 9pt; color: #DCE4F1; }
+.bt { flex: 1; display: flex; align-items: center; }
+.bf { display: inline-block; height: 3.6mm; border-radius: 1mm; background: #2B3A55; }
+.bf.lead { background: linear-gradient(90deg, #2E7CF6, #39C6FF); }
+.bv { margin-left: 2.2mm; font-size: 8.8pt; font-weight: 600; color: #DCE4F1; }
+.csrc { margin-top: 3mm; font-size: 7.6pt; color: #5E6D86; }
+.body { font-size: 10pt; color: #C9D4E5; margin: 3.5mm 0; }
+.method { font-size: 8.6pt; color: #8C9CB6; line-height: 1.5; padding: 3mm 4mm; border-left: 1.6pt solid #2F8CFF; background: rgba(16,26,46,0.6); border-radius: 0 2mm 2mm 0; }
+.method b { color: #C9D4E5; }
+
+/* GROUPS */
+.vac-h { margin-bottom: 3mm; }
+h2.group { font-size: 15pt; font-weight: 800; color: #fff; line-height: 1.2; margin: 7mm 0 3.2mm; padding-bottom: 2.2mm;
+  border-bottom: 1.2pt solid #3FB6FF; page-break-after: avoid; }
+.vac-h + h2.group { margin-top: 3mm; }
+.gdot { margin-right: 2.2mm; font-size: 13pt; }
+.gcount { display: inline-block; margin-left: 2.6mm; padding: 0.3mm 2.2mm; border-radius: 2mm; font-size: 9.5pt; font-weight: 800; color: #fff; background: #1D3A6B; vertical-align: 1mm; }
+.gdesc { display: block; margin-top: 1mm; font-size: 9pt; font-weight: 400; color: #8C9CB6; }
+
+/* CARDS */
+.card { page-break-inside: avoid; margin-bottom: 3.2mm; padding: 3.6mm 4.6mm 3.6mm 5mm; border-radius: 3mm;
+  background: linear-gradient(170deg, rgba(20,32,56,0.95), rgba(11,18,33,0.95));
+  border: 0.6pt solid rgba(80,140,230,0.22); border-left: 2.4pt solid #3FB6FF; }
+.card-top { display: block; margin-bottom: 1.4mm; }
+.num { font-weight: 800; font-size: 10pt; color: #06101F; background: #1D3A6B; border-radius: 1.6mm; padding: 0.3mm 1.8mm; }
+.card-top .date { margin-left: 2.6mm; font-size: 8pt; color: #8C9CB6; }
+.role { font-size: 12.6pt; font-weight: 700; color: #fff; line-height: 1.25; }
+.company { font-size: 10pt; font-weight: 600; color: #3FB6FF; margin-top: 0.6mm; }
+.marks { margin-top: 2.2mm; }
+.mark { display: inline-block; margin: 0 1.6mm 1.4mm 0; padding: 0.7mm 2.6mm; border-radius: 2mm; font-size: 9pt; font-weight: 700; }
+.mk { font-size: 7.2pt; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 1.8mm; opacity: 0.75; }
+.mark-fmt { color: #E6ECF6; background: rgba(80,110,160,0.30); border: 0.6pt solid rgba(140,170,220,0.50); }
+.mark-remote { color: #34D3A6; background: rgba(52,211,166,0.12); border: 0.6pt solid rgba(52,211,166,0.60); }
+.mark-salary { color: #9BE15D; background: rgba(155,225,93,0.12); border: 0.6pt solid rgba(155,225,93,0.65); }
+.chip { display: inline-block; margin: 0 1.4mm 1.4mm 0; padding: 0.5mm 2.2mm; font-size: 8.2pt; color: #C9D4E5; border-radius: 1.8mm;
+  background: rgba(60,80,120,0.35); border: 0.5pt solid rgba(120,150,200,0.25); }
+.summary { margin: 1mm 0 2.2mm; font-size: 9.8pt; line-height: 1.5; color: #D5DEEC; }
+.cta { display: inline-block; font-size: 8.6pt; font-weight: 700; color: #fff; padding: 1mm 3.4mm; border-radius: 3mm; background: linear-gradient(90deg, #2E7CF6, #2AA9F0); }
+
+/* OUTRO */
+.outro { margin-top: 8mm; padding: 8mm 6mm 9mm; border-radius: 4mm; text-align: center; page-break-inside: avoid;
+  background: radial-gradient(ellipse 80% 100% at 50% 0%, rgba(46,124,246,0.25), rgba(6,10,19,0) 80%), rgba(12,20,36,0.9);
+  border: 0.6pt solid rgba(80,140,230,0.3); }
+.outro p { color: #DCE4F1; font-size: 12pt; font-weight: 500; margin: 2.5mm 0 6mm; }
+.brand.small { font-size: 15pt; }

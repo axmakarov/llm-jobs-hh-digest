@@ -1,0 +1,10 @@
+{
+  "name": "llm-jobs-hh-digest",
+  "version": "1.0.0",
+  "description": "Дайджест LLM-вакансий с hh.ru за период: сбор через браузер и PDF «LLM JOBS» с группами по ролям, форматом и зарплатой.",
+  "author": { "name": "Alex Makarov", "url": "https://github.com/axmakarov" },
+  "homepage": "https://github.com/axmakarov/llm-jobs-hh-digest",
+  "repository": "https://github.com/axmakarov/llm-jobs-hh-digest",
+  "license": "MIT",
+  "keywords": ["hh.ru", "llm", "jobs", "vacancies", "digest", "pdf", "skill"]
+}
